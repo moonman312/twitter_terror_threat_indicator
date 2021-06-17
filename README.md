@@ -37,9 +37,9 @@ If you already have twitter API credentials you may skip with step.
 After cloning, and obtaining credentials, create a config.py file in the route directory. 
 populate the file with the following, replacing the values with your credentials.
 
-API_KEY = 'abcdefghijklmnop'
-API_SECRET_KEY = '123456789abcd987654321'
-BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAJsnvsjvnsjkdbnvdfjkslvncasfjkvnsalnvajefksvnjslkfmbnjadkfsvksjdfnjsf'
+API_KEY = 'abcdefghijklmnop'  
+API_SECRET_KEY = '123456789abcd987654321'  
+BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAJsnvsjvnsjkdbnvdfjkslvncasfjkvnsalnvajefksvnjslkfmbnjadkfsvksjdfnjsf'  
 
 `cd twitter_terror_threat_indicator`
 
@@ -79,7 +79,7 @@ Text preprocessing for BERT: https://tfhub.dev/tensorflow/bert_en_uncased_prepro
 
 
 ## Model Summary:
-__________________________________________________________________________________________________
+`__________________________________________________________________________________________________
 Layer (type)                    Output Shape         Param #     Connected to
 ==================================================================================================
 text (InputLayer)               [(None,)]            0
@@ -97,4 +97,4 @@ classifier (Dense)              (None, 1)            257         dropout[0][0]
 Total params: 13,549,058
 Trainable params: 13,549,057
 Non-trainable params: 1
-__________________________________________________________________________________________________
+__________________________________________________________________________________________________`
