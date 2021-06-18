@@ -64,7 +64,7 @@ def main():
 
     loss = tf.keras.losses.BinaryCrossentropy(from_logits=True)
     metrics = tf.metrics.BinaryAccuracy()
-    epochs = 3
+    epochs = 1
     steps_per_epoch = tf.data.experimental.cardinality(train_ds).numpy()
     num_train_steps = steps_per_epoch * epochs
     num_warmup_steps = int(0.1*num_train_steps)

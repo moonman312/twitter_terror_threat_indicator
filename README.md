@@ -80,19 +80,19 @@ Text preprocessing for BERT: https://tfhub.dev/tensorflow/bert_en_uncased_prepro
 
 ## Model Summary:
 `__________________________________________________________________________________________________
-Layer (type)                    Output Shape         Param #     Connected to
+Layer (type)					Output Shape 			Param # 				Connected to
 ==================================================================================================
-text (InputLayer)               [(None,)]            0
+text (InputLayer)				[(None,)]					0
 __________________________________________________________________________________________________
-preprocessing (KerasLayer)      {'input_type_ids': ( 0           text[0][0]
+preprocessing (KerasLayer)		{'input_type_ids': ( 0 							text[0][0]
 __________________________________________________________________________________________________
-BERT_encoder (KerasLayer)       {'default': (None, 2 13548801    preprocessing[0][0]
-                                                                 preprocessing[0][1]
-                                                                 preprocessing[0][2]
+BERT_encoder (KerasLayer)		{'default': (None, 2 13548801					preprocessing[0][0]
+																				preprocessing[0][1]
+																				preprocessing[0][2]
 __________________________________________________________________________________________________
-dropout (Dropout)               (None, 256)          0           BERT_encoder[0][13]
+dropout (Dropout)				(None, 256)					0 					BERT_encoder[0][13]
 __________________________________________________________________________________________________
-classifier (Dense)              (None, 1)            257         dropout[0][0]
+classifier (Dense)				(None, 1)					257 						dropout[0][0]
 ==================================================================================================
 Total params: 13,549,058
 Trainable params: 13,549,057
