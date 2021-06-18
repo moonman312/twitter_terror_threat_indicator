@@ -82,3 +82,5 @@ Text preprocessing for BERT: https://tfhub.dev/tensorflow/bert_en_uncased_prepro
 Total params: 13,549,058
 Trainable params: 13,549,057
 Non-trainable params: 1
+
+loss: 0.0525 - binary_accuracy: 0.9839
