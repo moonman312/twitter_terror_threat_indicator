@@ -18,6 +18,8 @@ With more time, I would also test the results of Electra-large. In the published
 
 I would also implement a productionized serving system.  
 
+I ended up having to train on less than all the data. The training time was over 20 hours for the full data set so I ended up sampling from the training data and using this smaller data set. With more time, I would use all data available.
+
 
 
 ## Error Rate Acheived

@@ -6,6 +6,7 @@ import config
 import tweepy
 import train_model
 import tensorflow as tf
+import numpy as np
 
 app = Flask(__name__)
 server_location = config.SERVER_LOCATION
@@ -26,7 +27,11 @@ def get_threat_level(tweet_id):
     if request.method == 'GET':
         print("this was a GET request")
         score = calculate_threat(tweet_id)
-        return jsonify({"That tweet's author is this likely to be pro-ISIS": score})
+        print(score.numpy())
+        score = score.numpy()
+        #In The future this could be altered to return multiple scores for a list of tweets for example.
+        first_score = str(score[0][0])
+        return jsonify({"That tweet's author is this likely to be pro-ISIS": first_score})
 
 
 def calculate_threat(tweet_id):
