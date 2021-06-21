@@ -29,11 +29,15 @@ def main():
     random_tweets = random_tweets[['content', 'is_isis']]
     all_tweets = isis_tweets.append(random_tweets)
 
+
+    half_tweets = all_tweets.sample(frac=0.2, replace=False, random_state=42)
+
+
     BUFFER_SIZE = 1000
     BATCH_SIZE = 32
 
-    X = all_tweets[['content']]
-    y = all_tweets[['is_isis']]
+    X = half_tweets[['content']]
+    y = half_tweets[['is_isis']]
     X_train, X_test, y_train, y_test = train_test_split(X, y,
                                                         stratify=y, 
                                                         test_size=0.25)
@@ -82,19 +86,19 @@ def main():
     history = classifier_model.fit(x=train_ds,
                                    validation_data=valid_ds,
                                    epochs=epochs)
-
-    loss, accuracy = classifier_model.evaluate(test_ds)
-
-    print(f'Loss: {loss}')
-    print(f'Accuracy: {accuracy}')
     dataset_name = 'threat_level'
     saved_model_path = './{}_bert'.format(dataset_name.replace('/', '_'))
 
+    loss, accuracy = classifier_model.evaluate(valid_ds)
+
+    print(f'Loss: {loss}')
+    print(f'Accuracy: {accuracy}')
     classifier_model.save(saved_model_path, include_optimizer=False)
 
 
+
 def build_classifier_model():
-    #Electra pretrained flavor of bert is pretrained as a descriminator. 
+    #Electra is a flavor of bert that is pretrained as a descriminator. 
     #Starting with the small version but could potentially test larger 
     #networks in the future
     tfhub_handle_encoder = 'https://tfhub.dev/google/electra_small/2'
@@ -109,4 +113,4 @@ def build_classifier_model():
     net = tf.keras.layers.Dense(1, activation=None, name='classifier')(net)
     return tf.keras.Model(text_input, net)
 
-main()
+# main()

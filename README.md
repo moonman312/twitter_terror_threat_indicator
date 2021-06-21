@@ -37,9 +37,11 @@ If you already have twitter API credentials you may skip with step.
 After cloning, and obtaining credentials, create a config.py file in the route directory. 
 populate the file with the following, replacing the values with your credentials.
 
+EXAMPLE (DO NOT USE):  
 API_KEY = 'abcdefghijklmnop'  
 API_SECRET_KEY = '123456789abcd987654321'  
 BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAJsnvsjvnsjkdbnvdfjkslvncasfjkvnsalnvajefksvnjslkfmbnjadkfsvksjdfnjsf'  
+SERVER_LOCATION = '/Users/jmooney/Documents/personal_admin/interviews/activefence'
 
 `cd twitter_terror_threat_indicator`
 
@@ -49,6 +51,13 @@ BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAJsnvsjvnsjkdbnvdfjkslvncasfjkvnsalnvajefksv
 
 
 ## Usage
+### Train
+`source venv/bin/activate`  
+  
+`python train_model.py`  
+
+  
+### Predict
 `source venv/bin/activate`
 
 `flask run`
