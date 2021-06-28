@@ -23,7 +23,7 @@ I ended up having to train on less than all the data. The training time was over
 
 
 ## Error Rate Acheived
-
+binary_accuracy: 0.9839
 
 
 ## Requirements
